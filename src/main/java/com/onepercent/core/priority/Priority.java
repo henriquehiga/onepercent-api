@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.UUID;
 
 import com.onepercent.core.priority.dtos.CompletePriorityDTO;
-import com.onepercent.core.priority.dtos.NewPriorityDTO;
+import com.onepercent.core.priority.dtos.CreatePriorityDTO;
 
 import lombok.Getter;
 
@@ -24,7 +24,7 @@ public class Priority {
     }
 
     public static Priority create(
-            NewPriorityDTO newPriorityDTO) {
+            CreatePriorityDTO newPriorityDTO) {
         String id = new UUID(0, 0).toString();
         return new Priority(id, newPriorityDTO.description(), newPriorityDTO.createdAt());
     }
