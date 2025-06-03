@@ -1,6 +1,6 @@
 package com.onepercent.core.priority;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.UUID;
 
 import com.onepercent.core.priority.dtos.CompletePriorityDTO;
@@ -26,7 +26,8 @@ public class Priority {
     public static Priority create(
             CreatePriorityDTO newPriorityDTO) {
         String id = new UUID(0, 0).toString();
-        return new Priority(id, newPriorityDTO.description(), newPriorityDTO.createdAt());
+        Date createdAt = new Date();
+        return new Priority(id, newPriorityDTO.description(), createdAt);
     }
 
     public static Priority mount(
